@@ -15,12 +15,14 @@ export default class NewToDoList extends React.Component {
     this.inputRef.current.value = ''
   }
 
+  
+
   render () {
     return (
       <InputGroup className="mb-3">
         <FormControl
           ref={this.inputRef}
-          placeholder="New list"
+          placeholder="New test list"
           aria-label="New list"
         />
         <InputGroup.Append>
