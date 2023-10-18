@@ -5,7 +5,9 @@ import ToDoListItem from './ToDoListItem';
 
 describe('ToDoListItem', () => {
     test('renders the checkbox', () => {
-        render(<ToDoListItem {...props.item.label, props.item.completed} />);
+        const completed = true;
+        const item = { completed, label: 'Completed item' };
+        render(<ToDoListItem item = {item} />);
 
         expect(screen.getByRole('checkbox')).toBeInTheDocument();
     })
