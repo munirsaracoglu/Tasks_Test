@@ -1,18 +1,1 @@
-[
-  {
-    "name": "Groceries",
-    "items": [
-      { "label": "Bread", "completed": false },
-      { "label": "Cheese", "completed": true },
-      { "label": "Tomatoes", "completed": false }
-    ]
-  },
-  {
-    "name": "Work",
-    "items": [
-      { "label": "Code reviews", "completed": false },
-      { "label": "DB migration", "completed": true },
-      { "label": "Documentation writing", "completed": false }
-    ]
-  }
-]
+[{"name":"Munir","items":[{"label":"Playwright","completed":false},{"label":"Cypress","completed":false}]},{"name":"Danylo","items":[{"label":"Coaching ","completed":false},{"label":"Guiding","completed":false}]},{"name":"School","items":[{"label":"Exams","completed":false}]}]
