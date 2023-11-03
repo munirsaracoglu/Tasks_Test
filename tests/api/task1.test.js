@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test';
 
 test.describe("API testing", () => {
   const baseUrl = "http://localhost:3030/"
-  test("Overwriting the database", async ({request}) => {
+  test.beforeAll(async ({request}) => {
     await request.post(`${baseUrl}/overwrite_database`, {data: '[]'})
   })
   
