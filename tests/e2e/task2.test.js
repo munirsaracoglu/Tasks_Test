@@ -8,6 +8,8 @@ test.describe("TodoList homepage verifications", () => {
   test("A List can be added by using Add button in the List header", async ({page}) => {
     await page.fill(".form-control", "School")
     await page.click("text=Add")
+    const addedNewList = await page.locator("text=School")
+    await expect(addedNewList).toHaveText("School")
   })
 
   test("A List Item can be added to a List with a simple form", async ({page}) => {
