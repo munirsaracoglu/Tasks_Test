@@ -1,18 +1,1 @@
-[
-  {
-    "name": "Groceries",
-    "items": [
-      { "label": "Bread", "completed": false },
-      { "label": "Cheese", "completed": true },
-      { "label": "Tomatoes", "completed": false }
-    ]
-  },
-  {
-    "name": "Work",
-    "items": [
-      { "label": "Code reviews", "completed": false },
-      { "label": "DB migration", "completed": true },
-      { "label": "Documentation writing", "completed": false }
-    ]
-  }
-]
+[]
