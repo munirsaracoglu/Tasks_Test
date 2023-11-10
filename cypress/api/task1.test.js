@@ -1,8 +1,9 @@
 describe('ToDo Lists', () => {
-  const baseUrl = "http://localhost:3030/"   
+  const baseUrl = "http://localhost:3030/"
+  const list = { name: 'School', items: [] }
+
   beforeEach(() => {
-    cy.visit(`${baseUrl}`)
-    cy.get('div#root button[type="button"]:nth-child(3)').click()
+    cy.request('POST', `${baseUrl}/overwrite_database`, [])
   })
   it('retrieves lists', () => {
     cy.request(`${baseUrl}/lists`)
@@ -11,36 +12,20 @@ describe('ToDo Lists', () => {
       })
   })
   it('invalid endpoint for get request', () => {
-    cy.request({
-      url: `${baseUrl}/invalid`, 
-      failOnStatusCode: false 
-    })
+    cy.request({url: `${baseUrl}/invalid`,failOnStatusCode: false})
       .then(response => {
         expect(response.status).to.eq(404)
       })
   });
   it('add a list', () => {
-    cy.request({
-      method: 'POST', 
-      url: `${baseUrl}/lists/add`, 
-      body: {
-        name:"School",
-        items:[]
-      }
-    }).then(response => {
+    cy.request('POST', `${baseUrl}/lists/add`, list)
+      .then(response => {
         expect(response.status).to.eq(200)
-        expect(response.body.name).to.eq("School")
-    })
+        expect(response.body.name).to.eq(list.name)
+      })
   });
   it('Delete a List', () => {
-    cy.request({
-      method: 'POST', 
-      url: `${baseUrl}/lists/add`, 
-      body: {
-        name:"School",
-        items:[]
-      }
-    })
+    cy.request('POST', `${baseUrl}/lists/add`, list)
     cy.request('DELETE', `${baseUrl}/lists/0`)
       .then(response => {
         expect(response.status).to.eq(200)
