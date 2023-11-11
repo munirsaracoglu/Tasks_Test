@@ -1,7 +1,0 @@
-{
-    "env": {
-      "cypress/globals": true
-    }
-  }
-
-  
