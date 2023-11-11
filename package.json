@@ -17,7 +17,6 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "cypress": "^13.5.0",
-    "eslint-plugin-cypress": "^2.15.1",
     "playwright": "^1.25.0"
   },
   "scripts": {
